@@ -18,4 +18,13 @@ Frontend: Tailwind CSS, Chart.js for real-time visualization.
 
 Firmware: C++ (Arduino/PlatformIO framework).
 
+EVIDENCE LINK:
 https://docs.google.com/document/d/1sPgRNuPKSFT0i30wFiV6VUB8EcaLfTAdLHSGBtwMwJg/edit?usp=sharing
+
+INITIAL DASHBAORD LINK 
+https://dashing-halva-873ea4.netlify.app/
+
+FINAL DASHBAORD LINK
+https://aquaalert.pythonanywhere.com/
+
+
