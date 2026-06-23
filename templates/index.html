@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AquaAlert Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 font-sans p-6 text-slate-800">
+    <main class="max-w-lg mx-auto bg-white rounded-xl shadow-md p-6 border-t-4 border-sky-500">
+        <h1 class="text-xl font-bold mb-4">AquaAlert Live Status</h1>
+        <div class="flex justify-between items-center">
+            <p class="text-4xl font-black text-sky-600" id="currentLevel">--%</p>
+            <div class="w-16 h-24 bg-slate-100 border-2 rounded-b-lg overflow-hidden">
+                <div id="waterVisual" class="bg-sky-500 transition-all" style="height: 0%;"></div>
+            </div>
+        </div>
+        <div class="mt-4 p-2 bg-slate-100 rounded text-sm font-bold">
+            Motor: <span id="motorStatusBadge">OFF</span>
+        </div>
+        <a href="/api/download_report" class="block mt-6 text-center bg-slate-800 text-white py-2 rounded font-bold">Download CSV Report</a>
+    </main>
+
+    <script>
+        async function updateStatus() {
+            const res = await fetch('/api/status');
+            const data = await res.json();
+            document.getElementById('currentLevel').innerText = data.water_level + '%';
+            document.getElementById('waterVisual').style.height = data.water_level + '%';
+            document.getElementById('motorStatusBadge').innerText = data.motor_status;
+        }
+        setInterval(updateStatus, 2000);
+        updateStatus();
+    </script>
+</body>
+</html>
