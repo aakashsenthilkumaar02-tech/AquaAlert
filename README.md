@@ -17,3 +17,5 @@ Backend: Python (Flask), SQLite for telemetry logging.
 Frontend: Tailwind CSS, Chart.js for real-time visualization.
 
 Firmware: C++ (Arduino/PlatformIO framework).
+
+https://docs.google.com/document/d/1sPgRNuPKSFT0i30wFiV6VUB8EcaLfTAdLHSGBtwMwJg/edit?usp=sharing
